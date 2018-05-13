@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>接口详情</title>
+	</head>
+
+	<body>
+		<div><input type="button" id="interface_save" value="保存" onclick="saveInterface()"/></div>
+		<div>
+			<h1>1 请求URL</h1>
+			<select name="request_mothod">
+				<option value="POST">POST</option>
+				<option value="GET">GET</option>
+			</select><input name="request_url" id="request_url" size="70" value=""></div>
+		<div>
+			<h1>2 请求参数</h1>
+			<div>
+				<h2>2.1 header</h2>
+				<table border="" cellspacing="" cellpadding="">
+					<tr>
+						<th>name</th>
+						<th>value</th>
+						<th>说明</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+						<td><input type="text" name="header_key1" id="header_key1" value="" /></td>
+						<td><input type="text" name="header_value1" id="header_value1" value="" /></td>
+						<td><input type="text" name="header_desc1" id="header_desc1" value="" /></td>
+						<td><input type="button" name="header_add" id="header_add" value="+" />
+							<input type="button" name="header_sub" id="header_sub" value="-" /></td>
+					</tr>
+				</table>
+			</div>
+			<h2>2.2 body</h2>
+			<div>
+				<h3>2.2.1 form</h3>
+				<table border="" cellspacing="" cellpadding="">
+					<tr>
+						<th>name</th>
+						<th>value</th>
+						<th>说明</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+						<td><input type="text" name="form_key1" id="form_key1" value="" /></td>
+						<td><input type="text" name="form_value1" id="form_value1" value="" /></td>
+						<td><input type="text" name="form_desc1" id="form_desc1" value="" /></td>
+						<td><input type="button" name="form_add" id="form_add" value="+" />
+							<input type="button" name="form_sub" id="form_sub" value="-" /></td>
+					</tr>
+				</table>
+				<h3>2.2.2 数据流</h3>
+				<textarea name="data_stream" rows="10" cols="50"></textarea>
+			</div>
+			<h2>2.3 url</h2>
+			<div>
+				<h3>path_variable</h3>
+				<table border="" cellspacing="" cellpadding="">
+					<tr>
+						<th>name</th>
+						<th>value</th>
+						<th>说明</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+						<td><input type="text" name="path_variable_key1" id="path_variable_key1" value="" /></td>
+						<td><input type="text" name="path_variable_value1" id="path_variable_value1" value="" /></td>
+						<td><input type="text" name="path_variable_desc1" id="path_variable_desc1" value="" /></td>
+						<td><input type="button" name="path_variable_add" id="path_variable_add" value="+" />
+							<input type="button" name="path_variable_sub" id="path_variable_sub" value="-" /></td>
+					</tr>
+				</table>
+				<h3>request_param</h3>
+				<table border="" cellspacing="" cellpadding="">
+					<tr>
+						<th>name</th>
+						<th>value</th>
+						<th>说明</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+						<td><input type="text" name="request_param_key1" id="request_param_key1" value="" /></td>
+						<td><input type="text" name="request_param_value1" id="request_param_value1" value="" /></td>
+						<td><input type="text" name="request_param_desc1" id="request_param_desc1" value="" /></td>
+						<td><input type="button" name="request_param_add" id="request_param_add" value="+" />
+							<input type="button" name="request_param_sub" id="request_param_sub" value="-" /></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div>
+			<h1>3 响应结果</h1>
+			<textarea name="data_stream" rows="10" cols="50"></textarea>
+		</div>
+	</body>
+	<script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	function saveInterface () {
+		
+		var request_url = $("#request_url").val();
+		console.log(request_url);
+		$("#request_url").val(request_url);
+		var html=document.getElementsByTagName('html')[0];
+		console.log("html.innerHTML:" + html.innerHTML);
+		
+	}
+</script>
+</html>
